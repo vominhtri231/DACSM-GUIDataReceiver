@@ -1,0 +1,11 @@
+C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\bin\Debug\GUIDataReceiver.exe.config
+C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\bin\Debug\GUIDataReceiver.exe
+C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\bin\Debug\GUIDataReceiver.pdb
+C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\obj\Debug\GUIDataReceiver.Properties.Resources.resources
+C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\obj\Debug\GUIDataReceiver.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\obj\Debug\GUIDataReceiver.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\obj\Debug\GUIDataReceiver.exe
+C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\obj\Debug\GUIDataReceiver.pdb
+C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\obj\Debug\GUIDataReceiver.MainForm.resources
+C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\obj\Debug\GUIDataReceiver.csprojResolveAssemblyReference.cache
+C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\obj\Debug\GUIDataReceiver.DataForm.resources
