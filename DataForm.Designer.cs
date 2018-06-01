@@ -32,6 +32,8 @@ namespace GUIDataReceiver
         {
             this.labelName = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.button_makeCm = new System.Windows.Forms.Button();
+            this.but_viewfile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelName
@@ -49,21 +51,43 @@ namespace GUIDataReceiver
             // mainPanel
             // 
             this.mainPanel.AutoScroll = true;
+            this.mainPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.mainPanel.Location = new System.Drawing.Point(22, 66);
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(1213, 513);
             this.mainPanel.TabIndex = 1;
             // 
+            // button_makeCm
+            // 
+            this.button_makeCm.Location = new System.Drawing.Point(990, 22);
+            this.button_makeCm.Name = "button_makeCm";
+            this.button_makeCm.Size = new System.Drawing.Size(75, 23);
+            this.button_makeCm.TabIndex = 2;
+            this.button_makeCm.Text = "Gửi lệnh";
+            this.button_makeCm.UseVisualStyleBackColor = true;
+            this.button_makeCm.Click += new System.EventHandler(this.button_makeCm_Click);
+            // 
+            // but_viewfile
+            // 
+            this.but_viewfile.Location = new System.Drawing.Point(1102, 20);
+            this.but_viewfile.Name = "but_viewfile";
+            this.but_viewfile.Size = new System.Drawing.Size(75, 23);
+            this.but_viewfile.TabIndex = 3;
+            this.but_viewfile.Text = "xem các file";
+            this.but_viewfile.UseVisualStyleBackColor = true;
+            this.but_viewfile.Click += new System.EventHandler(this.but_viewfile_Click);
+            // 
             // DataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1247, 579);
+            this.Controls.Add(this.but_viewfile);
+            this.Controls.Add(this.button_makeCm);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.labelName);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "DataForm";
             this.Text = "DataForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DataForm_FormClosed);
@@ -77,5 +101,7 @@ namespace GUIDataReceiver
 
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Panel mainPanel;
+        private Button button_makeCm;
+        private Button but_viewfile;
     }
 }

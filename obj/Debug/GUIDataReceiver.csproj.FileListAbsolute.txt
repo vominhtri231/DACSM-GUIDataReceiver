@@ -9,3 +9,5 @@ C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\obj\Debug\GUIDataReceiver.p
 C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\obj\Debug\GUIDataReceiver.MainForm.resources
 C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\obj\Debug\GUIDataReceiver.csprojResolveAssemblyReference.cache
 C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\obj\Debug\GUIDataReceiver.DataForm.resources
+C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\obj\Debug\GUIDataReceiver.CommandMaker.resources
+C:\Users\Admin\source\repos\DoAnMang\GUIDataReceiver\obj\Debug\GUIDataReceiver.FileSystem.resources

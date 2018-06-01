@@ -15,6 +15,8 @@ namespace GUIDataReceiver
     {
         ServerWorker worker;
         HandleWorker endWorking;
+        CommandMaker commandMaker;
+        FileSystem fileSystem;
         int pos;
 
         public DataForm(ServerWorker worker, HandleWorker endWorking)
@@ -50,6 +52,8 @@ namespace GUIDataReceiver
             }
             else
             {
+                if(commandMaker!=null) commandMaker.Dispose();
+                if (fileSystem != null) fileSystem.Dispose();
                 this.Dispose();
             }
         }
@@ -65,6 +69,7 @@ namespace GUIDataReceiver
             {
                 Label label = new Label();
                 label.Text = message;
+                label.Size = new Size(1200, 50);
                 label.Location = new Point(0, pos);
                 pos += label.Height  ;
                 label.Parent = mainPanel;
@@ -95,6 +100,16 @@ namespace GUIDataReceiver
             
         }
 
-       
+        private void button_makeCm_Click(object sender, EventArgs e)
+        {
+            commandMaker = new CommandMaker(this.worker);
+            commandMaker.Show();
+        }
+
+        private void but_viewfile_Click(object sender, EventArgs e)
+        {
+            fileSystem = new FileSystem(this.worker);
+            fileSystem.Show();
+        }
     }
 }

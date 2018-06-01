@@ -61,6 +61,7 @@ namespace GUIDataReceiver
                     if (listViewItem.Text.Equals(ep))
                     {
                         listClient.Items.Remove(listViewItem);
+                        break;
                     }
                 }
                 listClient.Refresh();

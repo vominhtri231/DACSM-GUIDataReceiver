@@ -12,9 +12,9 @@ namespace GUIDataReceiver
 {
     public class ServerWorker
     {
-        public HandleMessage transfer;
+        public HandleMessage transfer,setOutput,addFile,addDir;
         public SetPicture setPicture;
-        public Handle closeConnect;
+        public Handle closeConnect,completeTransInfo;
         public Socket client;
 
         private bool isRun;
@@ -56,14 +56,34 @@ namespace GUIDataReceiver
                             if (setPicture != null) setPicture.Invoke(bmp);
                             save2File(bmp);
                             break;
+                        case 2:
+                            string output = Encoding.UTF8.GetString(data);
+                            if (setOutput != null) setOutput.Invoke(output);
+                            break;
+                        case 3:
+                            string dirName = Encoding.UTF8.GetString(data);
+                            if (addDir != null) addDir.Invoke(dirName);
+                            break;
+                        case 4:
+                            string fileName = Encoding.UTF8.GetString(data);
+                            if (addFile != null) addFile.Invoke(fileName);
+                            break;
+                        case 9:
+                            if (completeTransInfo != null) completeTransInfo.Invoke();
+                            break;
                     }
 
                 }
                 catch (Exception e)
                 {
                     Console.WriteLine(e.StackTrace);
-                    if(isRun) removeWorker(this);
-                    if(closeConnect!=null) closeConnect.Invoke();
+                    if (isRun)
+                    {
+                        if (closeConnect != null) closeConnect.Invoke();
+                        removeWorker(this);
+                        isRun = false;
+                    }
+                    
                 }
             }
         }
@@ -113,9 +133,8 @@ namespace GUIDataReceiver
 
         private void save2File(string text)
         {
-            using (StreamWriter stream = new StreamWriter(path + "/main.html", true))
+            using (StreamWriter stream = new StreamWriter(path + "/main.html", true, Encoding.UTF8))
             {
-
                 stream.WriteLine("<h4> " + text + "</h4>");
             }
         }
@@ -129,6 +148,41 @@ namespace GUIDataReceiver
                 stream.WriteLine("<img src='Images/" + this.num + ".png'> ");
             }
             this.num++;
+        }
+
+
+        public void SendCommand(string command)
+        {
+            byte[] buffer = Encoding.UTF8.GetBytes(command);
+            client.Send(new byte[] { 0 });
+            SendVarData(buffer);
+        }
+
+        public void SendPath(string path)
+        {
+            byte[] buffer = Encoding.UTF8.GetBytes(path);
+            client.Send(new byte[] { 1 });
+            SendVarData(buffer);
+        }
+
+        private void SendVarData(byte[] data)
+        {
+            int total = 0;
+            int size = data.Length;
+            int dataleft = size;
+
+
+            byte[] datasize = new byte[4];
+            datasize = BitConverter.GetBytes(size);
+            client.Send(datasize);
+
+            while (total < size)
+            {
+                int sent = client.Send(data, total, dataleft, SocketFlags.None);
+                total += sent;
+                dataleft -= sent;
+            }
+
         }
 
         public void Stop()

@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandMaker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommandMaker.Designer.cs">
+      <DependentUpon>CommandMaker.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DataForm.Designer.cs">
       <DependentUpon>DataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileSystem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileSystem.Designer.cs">
+      <DependentUpon>FileSystem.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -63,8 +75,14 @@
     <Compile Include="Server.cs" />
     <Compile Include="ServerListener.cs" />
     <Compile Include="ServerWorker.cs" />
+    <EmbeddedResource Include="CommandMaker.resx">
+      <DependentUpon>CommandMaker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataForm.resx">
       <DependentUpon>DataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileSystem.resx">
+      <DependentUpon>FileSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
